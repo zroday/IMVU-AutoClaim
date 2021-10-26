@@ -45,6 +45,7 @@ namespace IMVU_AutoClaim
 
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             //Click login button
@@ -148,6 +149,28 @@ namespace IMVU_AutoClaim
             //Close Spin
             var scriptCloseSpin = @"document.getElementsByClassName('dialog-x')[0].click();";
             browser.ExecuteScriptAsync(scriptCloseSpin);
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (FormWindowState.Minimized == this.WindowState)
+            {
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(500);
+                this.Hide();
+            }
+
+            else if (FormWindowState.Normal == this.WindowState)
+            {
+                notifyIcon1.Visible = false;
+            }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon1.Visible = false;
         }
     }
 }

@@ -38,17 +38,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.label11 = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -128,16 +129,6 @@
             this.panel1.Size = new System.Drawing.Size(281, 22);
             this.panel1.TabIndex = 11;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(174, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "User:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -147,6 +138,16 @@
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Your credits:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Lime;
+            this.label3.Location = new System.Drawing.Point(174, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "User:";
             // 
             // panel2
             // 
@@ -159,16 +160,6 @@
             this.panel2.Size = new System.Drawing.Size(281, 22);
             this.panel2.TabIndex = 12;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "status:";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -178,6 +169,16 @@
             this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "Loading...";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(12, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "status:";
             // 
             // label7
             // 
@@ -230,6 +231,16 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "https://github.com/zroday/IMVU-AutoClaim.git";
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipText = "keep open to run autoClaim";
+            this.notifyIcon1.BalloonTipTitle = "a sub process was created";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "IMVU - AutoClaim";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,6 +262,7 @@
             this.Name = "Form1";
             this.Text = "IMVU - AutoClaim";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -280,6 +292,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
