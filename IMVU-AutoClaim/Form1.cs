@@ -92,6 +92,22 @@ namespace IMVU_AutoClaim
 
             return false;
         }
+
+        public void clickSpin()
+        {
+            //Click wallet button
+            var scriptClickWallet = @"document.getElementsByClassName('wallet-balance')[0].click();";
+            browser.ExecuteScriptAsync(scriptClickWallet);
+            //check if the bonus is released
+            var scriptCheckBonus = @"document.getElementsByClassName('available')[0].click();";
+            browser.ExecuteScriptAsync(scriptCheckBonus);
+            //spin now
+            var scriptSpinNow = @"document.getElementsByClassName('spin')[0].click();";
+            browser.ExecuteScriptAsync(scriptSpinNow);
+            //Close Spin
+            var scriptCloseSpin = @"document.getElementsByClassName('dialog-x')[0].click();";
+            browser.ExecuteScriptAsync(scriptCloseSpin);
+        }
        
         //document.getElementsByClassName('reward-name')[0].textContent;
         //document.getElementsByClassName('reward-description')[0].textContent;
@@ -108,6 +124,8 @@ namespace IMVU_AutoClaim
             label6.Text = "AutoClaim started successfully!";
             label8.Text = "Working!";
             label8.ForeColor = Color.Green;
+            button4.Enabled = false;
+            clickSpin();
             timer2.Start();
         }
 
@@ -137,18 +155,7 @@ namespace IMVU_AutoClaim
         //Start autoClaim injection
         private void timer2_Tick(object sender, EventArgs e)
         {
-            //Click wallet button
-            var scriptClickWallet = @"document.getElementsByClassName('wallet-balance')[0].click();";
-            browser.ExecuteScriptAsync(scriptClickWallet);
-            //check if the bonus is released
-            var scriptCheckBonus = @"document.getElementsByClassName('available')[0].click();";
-            browser.ExecuteScriptAsync(scriptCheckBonus);
-            //spin now
-            var scriptSpinNow = @"document.getElementsByClassName('spin')[0].click();";
-            browser.ExecuteScriptAsync(scriptSpinNow);
-            //Close Spin
-            var scriptCloseSpin = @"document.getElementsByClassName('dialog-x')[0].click();";
-            browser.ExecuteScriptAsync(scriptCloseSpin);
+            clickSpin();
         }
 
         private void Form1_Resize(object sender, EventArgs e)
